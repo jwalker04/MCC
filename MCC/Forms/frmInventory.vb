@@ -6,6 +6,7 @@ Public Class frmInventory
     Private ItemName As String
     Private ItemCollection As New Dictionary(Of String, String)
 
+    'Initial Form Load
     Private Sub frmInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'MCC_DEPT.ITEM' table. You can move, or remove it, as needed.
         Me.ITEMTableAdapter.Fill(Me.MCC_DEPT.ITEM)
@@ -14,7 +15,6 @@ Public Class frmInventory
 
         'Populate combo box
         FillComboBox()
-
     End Sub
 
     'Add Button Event
@@ -33,6 +33,8 @@ Public Class frmInventory
             'If element of dictionary is empty then prompt for input from user and exit event
             If strElement.Value = String.Empty Then
                 MessageBox.Show(strElement.Key & " is empty, fill it in and try again.")
+
+                'Removes values from each element before dictionary is used again
                 RemoveItemCollection()
                 Exit Sub
             End If
@@ -49,18 +51,14 @@ Public Class frmInventory
             MessageBox.Show("The Insert failed")
             Exit Sub
         Else
-
             MessageBox.Show("The Insert was successful")
 
             'Add the name of new Item to combo box if insert was successful
             cboName.Items.Add(ItemName)
         End If
-
-
-
     End Sub
 
-
+    'Update Button Event 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
         Dim ItemAdapter As New MCC_DEPTTableAdapters.ITEMTableAdapter
@@ -96,6 +94,7 @@ Public Class frmInventory
 
     End Sub
 
+    'Delete Button Event 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
         Dim ItemAdapter As New MCC_DEPTTableAdapters.ITEMTableAdapter
@@ -125,6 +124,26 @@ Public Class frmInventory
         'Repopulate Combobox
         FillComboBox()
 
+    End Sub
+
+    'Select Button Event 
+    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+        Dim ItemAdapter As New MCC_DEPTTableAdapters.ITEMTableAdapter
+        LINQtoDATASet()
+
+        ItemAdapter.ClearBeforeFill() = True
+
+    End Sub
+
+    'Back Button Event 
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Hide()
+
+    End Sub
+
+    'LogOut Button Event 
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Me.Close()
     End Sub
 
     'Method Name: LINQtoDATASet
@@ -161,6 +180,7 @@ Public Class frmInventory
         Next
     End Sub
 
+    'Returns values for each element 
     Private Sub CreateItemCollection()
         ItemCollection.Add("ITEM_ID", txtID.Text)
         ItemCollection.Add("ITEM_NAME", txtName.Text)
@@ -176,29 +196,11 @@ Public Class frmInventory
         ItemCollection.Add("ITEM_QUANTITY", txtQuantity.Text)
     End Sub
 
+    'Removes vaules from each element
     Private Sub RemoveItemCollection()
         ItemCollection.Remove("ITEM_ID")
         ItemCollection.Remove("ITEM_NAME")
         ItemCollection.Remove("ITEM_PRICE")
         ItemCollection.Remove("ITEM_QUANTITY")
     End Sub
-
-    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
-        Dim ItemAdapter As New MCC_DEPTTableAdapters.ITEMTableAdapter
-        LINQtoDATASet()
-
-        ItemAdapter.ClearBeforeFill() = True
-
-    End Sub
-
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Me.Hide()
-
-    End Sub
-
-    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
-        Me.Close()
-    End Sub
-
-
 End Class
