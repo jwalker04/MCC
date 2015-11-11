@@ -1,0 +1,48 @@
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\MCC.exe.config
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.vbprojResolveAssemblyReference.cache
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.frmLogin.resources
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.Resources.resources
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.vbproj.GenerateResource.Cache
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.xml
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\MCC.exe
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\MCC.pdb
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\MCC.xml
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\Devart.Data.dll
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\Devart.Data.Oracle.dll
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\bin\Debug\Devart.Data.Oracle.xml
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.exe
+C:\Users\Brad\Documents\CITA - 450\MCC\MCC\obj\Debug\MCC.pdb
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\MCC.exe.config
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.exe
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.xml
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.pdb
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.vbprojResolveAssemblyReference.cache
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.frmInventory.resources
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.frmLogin.resources
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.Resources.resources
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.vbproj.GenerateResource.Cache
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\MCC.exe
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\MCC.pdb
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\MCC.xml
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\Devart.Data.dll
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\Devart.Data.Oracle.dll
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\bin\Debug\Devart.Data.Oracle.xml
+C:\Users\Brad\Documents\CITA-450\MCC\MCC\obj\Debug\MCC.selForm.resources
+C:\Users\Brad\Documents\MCC\MCC\bin\Debug\MCC.exe.config
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.exe
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.xml
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.pdb
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.vbprojResolveAssemblyReference.cache
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmInventory.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmLogin.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmMisc.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmPromo.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmProShop.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.frmReports.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.selForm.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.Resources.resources
+C:\Users\Brad\Documents\MCC\MCC\obj\Debug\MCC.vbproj.GenerateResource.Cache
+C:\Users\Brad\Documents\MCC\MCC\bin\Debug\MCC.exe
+C:\Users\Brad\Documents\MCC\MCC\bin\Debug\MCC.pdb
+C:\Users\Brad\Documents\MCC\MCC\bin\Debug\MCC.xml
+C:\Users\Brad\Documents\MCC\MCC\bin\Debug\Devart.Data.Oracle.xml
