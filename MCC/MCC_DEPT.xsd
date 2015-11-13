@@ -135,7 +135,7 @@
               <Mapping SourceColumn="ITEM_QUANTITY" DataSetColumn="ITEM_QUANTITY" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteItem" Modifier="Public" Name="DeleteItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="DeleteItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteItem" Modifier="Public" Name="DeleteItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteItem">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM MCC_DEPT.ITEM
@@ -146,7 +146,7 @@ WHERE        (ITEM_ID = :PARAM1)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="MCC_DEPT.ITEM" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByItemName" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByItemName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByItemName">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="MCC_DEPT.ITEM" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByItemName" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByItemName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByItemName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ITEM_ID, ITEM_NAME, ITEM_PRICE, ITEM_QUANTITY
@@ -158,7 +158,7 @@ WHERE        (ITEM_NAME = :PARAM1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertItem" Modifier="Public" Name="InsertItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertItem" Modifier="Public" Name="InsertItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertItem">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO "MCC_DEPT"."ITEM" ("ITEM_NAME", "ITEM_PRICE", "ITEM_QUANTITY") VALUES (:ITEM_NAME, :ITEM_PRICE, :ITEM_QUANTITY)</CommandText>
@@ -170,7 +170,7 @@ WHERE        (ITEM_NAME = :PARAM1)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateItem" Modifier="Public" Name="UpdateItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateItem" Modifier="Public" Name="UpdateItem" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateItem">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       MCC_DEPT.ITEM
@@ -344,7 +344,66 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
               <Mapping SourceColumn="MEMBER_PROSHOP" DataSetColumn="MEMBER_PROSHOP" />
               <Mapping SourceColumn="MEMBER_HANDICAP" DataSetColumn="MEMBER_HANDICAP" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteMember" Modifier="Public" Name="DeleteMember" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteMember">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM MCC_DEPT.MEMBER
+WHERE        (MEMBER_NAME = :mName)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="mName" ColumnName="MEMBER_NAME" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="mName" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_NAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="MCC_DEPT.MEMBER" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByMemberName" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillByMemberName" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByMemberName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MEMBER_ID, MEMBER_NAME, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_PROSHOP, MEMBER_HANDICAP
+FROM            MCC_DEPT.MEMBER</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertMember" Modifier="Public" Name="InsertMember" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertMember">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO MCC_DEPT.MEMBER
+                         (MEMBER_ID, MEMBER_NAME, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_PROSHOP, MEMBER_HANDICAP)
+VALUES        (:MEMBER_ID, :MEMBER_NAME, :MEMBER_ADDRESS, :MEMBER_EMAIL, :MEMBER_PHONE, :MEMBER_PROSHOP, :MEMBER_HANDICAP)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MEMBER_ID" ColumnName="MEMBER_ID" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_ID" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_NAME" ColumnName="MEMBER_NAME" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_ADDRESS" ColumnName="MEMBER_ADDRESS" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_ADDRESS" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_ADDRESS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_EMAIL" ColumnName="MEMBER_EMAIL" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_EMAIL" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_PHONE" ColumnName="MEMBER_PHONE" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_PROSHOP" ColumnName="MEMBER_PROSHOP" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_PROSHOP" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_PROSHOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_HANDICAP" ColumnName="MEMBER_HANDICAP" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_HANDICAP" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_HANDICAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMember" Modifier="Public" Name="UpdateMember" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateMember">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       MCC_DEPT.MEMBER
+SET                MEMBER_ID = :MEMBER_ID, MEMBER_NAME = :MEMBER_NAME, MEMBER_ADDRESS = :MEMBER_ADDRESS, MEMBER_EMAIL = :MEMBER_EMAIL, MEMBER_PHONE = :MEMBER_PHONE, 
+                         MEMBER_PROSHOP = :MEMBER_PROSHOP, MEMBER_HANDICAP = :MEMBER_HANDICAP
+WHERE        (MEMBER_ID = :fid)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MEMBER_ID" ColumnName="MEMBER_ID" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_ID" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_NAME" ColumnName="MEMBER_NAME" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_ADDRESS" ColumnName="MEMBER_ADDRESS" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_ADDRESS" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_ADDRESS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_EMAIL" ColumnName="MEMBER_EMAIL" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_EMAIL" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_EMAIL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_PHONE" ColumnName="MEMBER_PHONE" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="VARCHAR2" DbType="String" Direction="Input" ParameterName="MEMBER_PHONE" Precision="0" ProviderType="VarChar" Scale="0" Size="1024" SourceColumn="MEMBER_PHONE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_PROSHOP" ColumnName="MEMBER_PROSHOP" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_PROSHOP" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_PROSHOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MEMBER_HANDICAP" ColumnName="MEMBER_HANDICAP" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="MEMBER_HANDICAP" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_HANDICAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fid" ColumnName="MEMBER_ID" DataSourceName="MCC_DEPT.MEMBER" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="fid" Precision="0" ProviderType="Number" Scale="0" Size="0" SourceColumn="MEMBER_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ROLETableAdapter" GeneratorDataComponentClassName="ROLETableAdapter" Name="ROLE" UserDataComponentName="ROLETableAdapter">
             <MainSource>
@@ -532,7 +591,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
   <xs:element name="MCC_DEPT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MCC_DEPT" msprop:Generator_UserDSName="MCC_DEPT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="EMPLOYEE" msprop:Generator_TableClassName="EMPLOYEEDataTable" msprop:Generator_TableVarName="tableEMPLOYEE" msprop:Generator_TablePropName="EMPLOYEE" msprop:Generator_RowDeletingName="EMPLOYEERowDeleting" msprop:Generator_RowChangingName="EMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="EMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="EMPLOYEERowDeleted" msprop:Generator_UserTableName="EMPLOYEE" msprop:Generator_RowChangedName="EMPLOYEERowChanged" msprop:Generator_RowEvArgName="EMPLOYEERowChangeEvent" msprop:Generator_RowClassName="EMPLOYEERow">
+        <xs:element name="EMPLOYEE" msprop:Generator_TableClassName="EMPLOYEEDataTable" msprop:Generator_TableVarName="tableEMPLOYEE" msprop:Generator_RowChangedName="EMPLOYEERowChanged" msprop:Generator_TablePropName="EMPLOYEE" msprop:Generator_RowDeletingName="EMPLOYEERowDeleting" msprop:Generator_RowChangingName="EMPLOYEERowChanging" msprop:Generator_RowEvHandlerName="EMPLOYEERowChangeEventHandler" msprop:Generator_RowDeletedName="EMPLOYEERowDeleted" msprop:Generator_RowClassName="EMPLOYEERow" msprop:Generator_UserTableName="EMPLOYEE" msprop:Generator_RowEvArgName="EMPLOYEERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EMPLOYEE_ID" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_ID" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_ID" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_IDColumn" msprop:Generator_UserColumnName="EMPLOYEE_ID" type="xs:decimal" />
@@ -561,7 +620,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ITEM" msprop:Generator_TableClassName="ITEMDataTable" msprop:Generator_TableVarName="tableITEM" msprop:Generator_TablePropName="ITEM" msprop:Generator_RowDeletingName="ITEMRowDeleting" msprop:Generator_RowChangingName="ITEMRowChanging" msprop:Generator_RowEvHandlerName="ITEMRowChangeEventHandler" msprop:Generator_RowDeletedName="ITEMRowDeleted" msprop:Generator_UserTableName="ITEM" msprop:Generator_RowChangedName="ITEMRowChanged" msprop:Generator_RowEvArgName="ITEMRowChangeEvent" msprop:Generator_RowClassName="ITEMRow">
+        <xs:element name="ITEM" msprop:Generator_TableClassName="ITEMDataTable" msprop:Generator_TableVarName="tableITEM" msprop:Generator_RowChangedName="ITEMRowChanged" msprop:Generator_TablePropName="ITEM" msprop:Generator_RowDeletingName="ITEMRowDeleting" msprop:Generator_RowChangingName="ITEMRowChanging" msprop:Generator_RowEvHandlerName="ITEMRowChangeEventHandler" msprop:Generator_RowDeletedName="ITEMRowDeleted" msprop:Generator_RowClassName="ITEMRow" msprop:Generator_UserTableName="ITEM" msprop:Generator_RowEvArgName="ITEMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM_ID" msprop:Generator_ColumnVarNameInTable="columnITEM_ID" msprop:Generator_ColumnPropNameInRow="ITEM_ID" msprop:Generator_ColumnPropNameInTable="ITEM_IDColumn" msprop:Generator_UserColumnName="ITEM_ID" type="xs:decimal" />
@@ -577,7 +636,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LOGIN" msprop:Generator_TableClassName="LOGINDataTable" msprop:Generator_TableVarName="tableLOGIN" msprop:Generator_TablePropName="LOGIN" msprop:Generator_RowDeletingName="LOGINRowDeleting" msprop:Generator_RowChangingName="LOGINRowChanging" msprop:Generator_RowEvHandlerName="LOGINRowChangeEventHandler" msprop:Generator_RowDeletedName="LOGINRowDeleted" msprop:Generator_UserTableName="LOGIN" msprop:Generator_RowChangedName="LOGINRowChanged" msprop:Generator_RowEvArgName="LOGINRowChangeEvent" msprop:Generator_RowClassName="LOGINRow">
+        <xs:element name="LOGIN" msprop:Generator_TableClassName="LOGINDataTable" msprop:Generator_TableVarName="tableLOGIN" msprop:Generator_RowChangedName="LOGINRowChanged" msprop:Generator_TablePropName="LOGIN" msprop:Generator_RowDeletingName="LOGINRowDeleting" msprop:Generator_RowChangingName="LOGINRowChanging" msprop:Generator_RowEvHandlerName="LOGINRowChangeEventHandler" msprop:Generator_RowDeletedName="LOGINRowDeleted" msprop:Generator_RowClassName="LOGINRow" msprop:Generator_UserTableName="LOGIN" msprop:Generator_RowEvArgName="LOGINRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:decimal" />
@@ -599,7 +658,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MEMBER" msprop:Generator_TableClassName="MEMBERDataTable" msprop:Generator_TableVarName="tableMEMBER" msprop:Generator_TablePropName="MEMBER" msprop:Generator_RowDeletingName="MEMBERRowDeleting" msprop:Generator_RowChangingName="MEMBERRowChanging" msprop:Generator_RowEvHandlerName="MEMBERRowChangeEventHandler" msprop:Generator_RowDeletedName="MEMBERRowDeleted" msprop:Generator_UserTableName="MEMBER" msprop:Generator_RowChangedName="MEMBERRowChanged" msprop:Generator_RowEvArgName="MEMBERRowChangeEvent" msprop:Generator_RowClassName="MEMBERRow">
+        <xs:element name="MEMBER" msprop:Generator_TableClassName="MEMBERDataTable" msprop:Generator_TableVarName="tableMEMBER" msprop:Generator_RowChangedName="MEMBERRowChanged" msprop:Generator_TablePropName="MEMBER" msprop:Generator_RowDeletingName="MEMBERRowDeleting" msprop:Generator_RowChangingName="MEMBERRowChanging" msprop:Generator_RowEvHandlerName="MEMBERRowChangeEventHandler" msprop:Generator_RowDeletedName="MEMBERRowDeleted" msprop:Generator_RowClassName="MEMBERRow" msprop:Generator_UserTableName="MEMBER" msprop:Generator_RowEvArgName="MEMBERRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MEMBER_ID" msprop:Generator_ColumnVarNameInTable="columnMEMBER_ID" msprop:Generator_ColumnPropNameInRow="MEMBER_ID" msprop:Generator_ColumnPropNameInTable="MEMBER_IDColumn" msprop:Generator_UserColumnName="MEMBER_ID" type="xs:decimal" />
@@ -636,7 +695,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ROLE" msprop:Generator_TableClassName="ROLEDataTable" msprop:Generator_TableVarName="tableROLE" msprop:Generator_TablePropName="ROLE" msprop:Generator_RowDeletingName="ROLERowDeleting" msprop:Generator_RowChangingName="ROLERowChanging" msprop:Generator_RowEvHandlerName="ROLERowChangeEventHandler" msprop:Generator_RowDeletedName="ROLERowDeleted" msprop:Generator_UserTableName="ROLE" msprop:Generator_RowChangedName="ROLERowChanged" msprop:Generator_RowEvArgName="ROLERowChangeEvent" msprop:Generator_RowClassName="ROLERow">
+        <xs:element name="ROLE" msprop:Generator_TableClassName="ROLEDataTable" msprop:Generator_TableVarName="tableROLE" msprop:Generator_RowChangedName="ROLERowChanged" msprop:Generator_TablePropName="ROLE" msprop:Generator_RowDeletingName="ROLERowDeleting" msprop:Generator_RowChangingName="ROLERowChanging" msprop:Generator_RowEvHandlerName="ROLERowChangeEventHandler" msprop:Generator_RowDeletedName="ROLERowDeleted" msprop:Generator_RowClassName="ROLERow" msprop:Generator_UserTableName="ROLE" msprop:Generator_RowEvArgName="ROLERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ROLE_ID" msprop:Generator_ColumnVarNameInTable="columnROLE_ID" msprop:Generator_ColumnPropNameInRow="ROLE_ID" msprop:Generator_ColumnPropNameInTable="ROLE_IDColumn" msprop:Generator_UserColumnName="ROLE_ID" type="xs:decimal" />
@@ -650,7 +709,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SALE" msprop:Generator_TableClassName="SALEDataTable" msprop:Generator_TableVarName="tableSALE" msprop:Generator_TablePropName="SALE" msprop:Generator_RowDeletingName="SALERowDeleting" msprop:Generator_RowChangingName="SALERowChanging" msprop:Generator_RowEvHandlerName="SALERowChangeEventHandler" msprop:Generator_RowDeletedName="SALERowDeleted" msprop:Generator_UserTableName="SALE" msprop:Generator_RowChangedName="SALERowChanged" msprop:Generator_RowEvArgName="SALERowChangeEvent" msprop:Generator_RowClassName="SALERow">
+        <xs:element name="SALE" msprop:Generator_TableClassName="SALEDataTable" msprop:Generator_TableVarName="tableSALE" msprop:Generator_RowChangedName="SALERowChanged" msprop:Generator_TablePropName="SALE" msprop:Generator_RowDeletingName="SALERowDeleting" msprop:Generator_RowChangingName="SALERowChanging" msprop:Generator_RowEvHandlerName="SALERowChangeEventHandler" msprop:Generator_RowDeletedName="SALERowDeleted" msprop:Generator_RowClassName="SALERow" msprop:Generator_UserTableName="SALE" msprop:Generator_RowEvArgName="SALERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SALE_ID" msprop:Generator_ColumnVarNameInTable="columnSALE_ID" msprop:Generator_ColumnPropNameInRow="SALE_ID" msprop:Generator_ColumnPropNameInTable="SALE_IDColumn" msprop:Generator_UserColumnName="SALE_ID" type="xs:decimal" />
@@ -667,7 +726,7 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TRANSACTION" msprop:Generator_TableClassName="TRANSACTIONDataTable" msprop:Generator_TableVarName="tableTRANSACTION" msprop:Generator_TablePropName="TRANSACTION" msprop:Generator_RowDeletingName="TRANSACTIONRowDeleting" msprop:Generator_RowChangingName="TRANSACTIONRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTIONRowDeleted" msprop:Generator_UserTableName="TRANSACTION" msprop:Generator_RowChangedName="TRANSACTIONRowChanged" msprop:Generator_RowEvArgName="TRANSACTIONRowChangeEvent" msprop:Generator_RowClassName="TRANSACTIONRow">
+        <xs:element name="TRANSACTION" msprop:Generator_TableClassName="TRANSACTIONDataTable" msprop:Generator_TableVarName="tableTRANSACTION" msprop:Generator_RowChangedName="TRANSACTIONRowChanged" msprop:Generator_TablePropName="TRANSACTION" msprop:Generator_RowDeletingName="TRANSACTIONRowDeleting" msprop:Generator_RowChangingName="TRANSACTIONRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTIONRowDeleted" msprop:Generator_RowClassName="TRANSACTIONRow" msprop:Generator_UserTableName="TRANSACTION" msprop:Generator_RowEvArgName="TRANSACTIONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TRANSACTION_ID" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_ID" msprop:Generator_ColumnPropNameInRow="TRANSACTION_ID" msprop:Generator_ColumnPropNameInTable="TRANSACTION_IDColumn" msprop:Generator_UserColumnName="TRANSACTION_ID" type="xs:decimal" />
@@ -714,24 +773,24 @@ WHERE        (USERNAME = :PARAM1) AND (USER_PASSWORD = :PARAM2)</CommandText>
       <xs:selector xpath=".//mstns:TRANSACTION" />
       <xs:field xpath="mstns:TRANSACTION_ID" />
     </xs:unique>
-    <xs:keyref name="FK_ITEM_TRANSACTION" refer="ITEM_Constraint1" msprop:rel_Generator_UserChildTable="TRANSACTION" msprop:rel_Generator_ChildPropName="GetTRANSACTIONRows" msprop:rel_Generator_UserRelationName="FK_ITEM_TRANSACTION" msprop:rel_Generator_ParentPropName="ITEMRow" msprop:rel_Generator_RelationVarName="relationFK_ITEM_TRANSACTION" msprop:rel_Generator_UserParentTable="ITEM">
-      <xs:selector xpath=".//mstns:TRANSACTION" />
-      <xs:field xpath="mstns:ITEM_ID" />
-    </xs:keyref>
-    <xs:keyref name="FK_SALE_TRANSACTION" refer="SALE_Constraint1" msprop:rel_Generator_UserChildTable="TRANSACTION" msprop:rel_Generator_ChildPropName="GetTRANSACTIONRows" msprop:rel_Generator_UserRelationName="FK_SALE_TRANSACTION" msprop:rel_Generator_RelationVarName="relationFK_SALE_TRANSACTION" msprop:rel_Generator_UserParentTable="SALE" msprop:rel_Generator_ParentPropName="SALERow">
+    <xs:keyref name="FK_SALE_TRANSACTION" refer="SALE_Constraint1" msprop:rel_Generator_UserChildTable="TRANSACTION" msprop:rel_Generator_ChildPropName="GetTRANSACTIONRows" msprop:rel_Generator_UserRelationName="FK_SALE_TRANSACTION" msprop:rel_Generator_ParentPropName="SALERow" msprop:rel_Generator_RelationVarName="relationFK_SALE_TRANSACTION" msprop:rel_Generator_UserParentTable="SALE">
       <xs:selector xpath=".//mstns:TRANSACTION" />
       <xs:field xpath="mstns:SALE_ID" />
     </xs:keyref>
-    <xs:keyref name="FK_ROLE_EMPLOYEE" refer="ROLE_Constraint1" msprop:rel_Generator_UserChildTable="EMPLOYEE" msprop:rel_Generator_ChildPropName="GetEMPLOYEERows" msprop:rel_Generator_UserRelationName="FK_ROLE_EMPLOYEE" msprop:rel_Generator_RelationVarName="relationFK_ROLE_EMPLOYEE" msprop:rel_Generator_UserParentTable="ROLE" msprop:rel_Generator_ParentPropName="ROLERow">
+    <xs:keyref name="FK_ITEM_TRANSACTION" refer="ITEM_Constraint1" msprop:rel_Generator_UserChildTable="TRANSACTION" msprop:rel_Generator_ChildPropName="GetTRANSACTIONRows" msprop:rel_Generator_UserRelationName="FK_ITEM_TRANSACTION" msprop:rel_Generator_RelationVarName="relationFK_ITEM_TRANSACTION" msprop:rel_Generator_UserParentTable="ITEM" msprop:rel_Generator_ParentPropName="ITEMRow">
+      <xs:selector xpath=".//mstns:TRANSACTION" />
+      <xs:field xpath="mstns:ITEM_ID" />
+    </xs:keyref>
+    <xs:keyref name="FK_ROLE_EMPLOYEE" refer="ROLE_Constraint1" msprop:rel_Generator_UserChildTable="EMPLOYEE" msprop:rel_Generator_ChildPropName="GetEMPLOYEERows" msprop:rel_Generator_UserRelationName="FK_ROLE_EMPLOYEE" msprop:rel_Generator_ParentPropName="ROLERow" msprop:rel_Generator_RelationVarName="relationFK_ROLE_EMPLOYEE" msprop:rel_Generator_UserParentTable="ROLE">
       <xs:selector xpath=".//mstns:EMPLOYEE" />
       <xs:field xpath="mstns:ROLE_ID" />
     </xs:keyref>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="LOGIN_ROLE_FK" msdata:parent="ROLE" msdata:child="LOGIN" msdata:parentkey="ROLE_ID" msdata:childkey="ROLE_ID" msprop:Generator_UserChildTable="LOGIN" msprop:Generator_ChildPropName="GetLOGINRows" msprop:Generator_UserRelationName="LOGIN_ROLE_FK" msprop:Generator_RelationVarName="relationLOGIN_ROLE_FK" msprop:Generator_UserParentTable="ROLE" msprop:Generator_ParentPropName="ROLERow" />
-      <msdata:Relationship name="SALE_EMPLOYEE_ID_FK" msdata:parent="EMPLOYEE" msdata:child="SALE" msdata:parentkey="EMPLOYEE_ID" msdata:childkey="EMPLOYEE_ID" msprop:Generator_UserChildTable="SALE" msprop:Generator_ChildPropName="GetSALERows" msprop:Generator_UserRelationName="SALE_EMPLOYEE_ID_FK" msprop:Generator_ParentPropName="EMPLOYEERow" msprop:Generator_RelationVarName="relationSALE_EMPLOYEE_ID_FK" msprop:Generator_UserParentTable="EMPLOYEE" />
-      <msdata:Relationship name="SALE_MEMBER_ID_FK" msdata:parent="MEMBER" msdata:child="SALE" msdata:parentkey="MEMBER_ID" msdata:childkey="MEMBER_ID" msprop:Generator_UserChildTable="SALE" msprop:Generator_ChildPropName="GetSALERows" msprop:Generator_UserRelationName="SALE_MEMBER_ID_FK" msprop:Generator_ParentPropName="MEMBERRow" msprop:Generator_RelationVarName="relationSALE_MEMBER_ID_FK" msprop:Generator_UserParentTable="MEMBER" />
+      <msdata:Relationship name="LOGIN_ROLE_FK" msdata:parent="ROLE" msdata:child="LOGIN" msdata:parentkey="ROLE_ID" msdata:childkey="ROLE_ID" msprop:Generator_UserChildTable="LOGIN" msprop:Generator_ChildPropName="GetLOGINRows" msprop:Generator_UserRelationName="LOGIN_ROLE_FK" msprop:Generator_ParentPropName="ROLERow" msprop:Generator_RelationVarName="relationLOGIN_ROLE_FK" msprop:Generator_UserParentTable="ROLE" />
+      <msdata:Relationship name="SALE_EMPLOYEE_ID_FK" msdata:parent="EMPLOYEE" msdata:child="SALE" msdata:parentkey="EMPLOYEE_ID" msdata:childkey="EMPLOYEE_ID" msprop:Generator_UserChildTable="SALE" msprop:Generator_ChildPropName="GetSALERows" msprop:Generator_UserRelationName="SALE_EMPLOYEE_ID_FK" msprop:Generator_RelationVarName="relationSALE_EMPLOYEE_ID_FK" msprop:Generator_UserParentTable="EMPLOYEE" msprop:Generator_ParentPropName="EMPLOYEERow" />
+      <msdata:Relationship name="SALE_MEMBER_ID_FK" msdata:parent="MEMBER" msdata:child="SALE" msdata:parentkey="MEMBER_ID" msdata:childkey="MEMBER_ID" msprop:Generator_UserChildTable="SALE" msprop:Generator_ChildPropName="GetSALERows" msprop:Generator_UserRelationName="SALE_MEMBER_ID_FK" msprop:Generator_RelationVarName="relationSALE_MEMBER_ID_FK" msprop:Generator_UserParentTable="MEMBER" msprop:Generator_ParentPropName="MEMBERRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

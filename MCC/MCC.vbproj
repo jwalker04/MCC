@@ -88,6 +88,12 @@
     <Compile Include="Forms\frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmMember.Designer.vb">
+      <DependentUpon>frmMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmMisc.Designer.vb">
       <DependentUpon>frmMisc.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMember.resx">
+      <DependentUpon>frmMember.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMisc.resx">
       <DependentUpon>frmMisc.vb</DependentUpon>

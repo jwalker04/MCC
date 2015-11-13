@@ -41,9 +41,9 @@ Partial Public Class MCC_DEPT
     
     Private relationFK_ROLE_EMPLOYEE As Global.System.Data.DataRelation
     
-    Private relationFK_ITEM_TRANSACTION As Global.System.Data.DataRelation
-    
     Private relationFK_SALE_TRANSACTION As Global.System.Data.DataRelation
+    
+    Private relationFK_ITEM_TRANSACTION As Global.System.Data.DataRelation
     
     Private relationLOGIN_ROLE_FK As Global.System.Data.DataRelation
     
@@ -351,8 +351,8 @@ Partial Public Class MCC_DEPT
             End If
         End If
         Me.relationFK_ROLE_EMPLOYEE = Me.Relations("FK_ROLE_EMPLOYEE")
-        Me.relationFK_ITEM_TRANSACTION = Me.Relations("FK_ITEM_TRANSACTION")
         Me.relationFK_SALE_TRANSACTION = Me.Relations("FK_SALE_TRANSACTION")
+        Me.relationFK_ITEM_TRANSACTION = Me.Relations("FK_ITEM_TRANSACTION")
         Me.relationLOGIN_ROLE_FK = Me.Relations("LOGIN_ROLE_FK")
         Me.relationSALE_EMPLOYEE_ID_FK = Me.Relations("SALE_EMPLOYEE_ID_FK")
         Me.relationSALE_MEMBER_ID_FK = Me.Relations("SALE_MEMBER_ID_FK")
@@ -386,22 +386,22 @@ Partial Public Class MCC_DEPT
         fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
         fkc.DeleteRule = Global.System.Data.Rule.Cascade
         fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_ITEM_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableITEM.ITEM_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.ITEM_IDColumn})
+        fkc = New Global.System.Data.ForeignKeyConstraint("FK_SALE_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableSALE.SALE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.SALE_IDColumn})
         Me.tableTRANSACTION.Constraints.Add(fkc)
         fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
         fkc.DeleteRule = Global.System.Data.Rule.Cascade
         fkc.UpdateRule = Global.System.Data.Rule.Cascade
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_SALE_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableSALE.SALE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.SALE_IDColumn})
+        fkc = New Global.System.Data.ForeignKeyConstraint("FK_ITEM_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableITEM.ITEM_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.ITEM_IDColumn})
         Me.tableTRANSACTION.Constraints.Add(fkc)
         fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
         fkc.DeleteRule = Global.System.Data.Rule.Cascade
         fkc.UpdateRule = Global.System.Data.Rule.Cascade
         Me.relationFK_ROLE_EMPLOYEE = New Global.System.Data.DataRelation("FK_ROLE_EMPLOYEE", New Global.System.Data.DataColumn() {Me.tableROLE.ROLE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableEMPLOYEE.ROLE_IDColumn}, false)
         Me.Relations.Add(Me.relationFK_ROLE_EMPLOYEE)
-        Me.relationFK_ITEM_TRANSACTION = New Global.System.Data.DataRelation("FK_ITEM_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableITEM.ITEM_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.ITEM_IDColumn}, false)
-        Me.Relations.Add(Me.relationFK_ITEM_TRANSACTION)
         Me.relationFK_SALE_TRANSACTION = New Global.System.Data.DataRelation("FK_SALE_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableSALE.SALE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.SALE_IDColumn}, false)
         Me.Relations.Add(Me.relationFK_SALE_TRANSACTION)
+        Me.relationFK_ITEM_TRANSACTION = New Global.System.Data.DataRelation("FK_ITEM_TRANSACTION", New Global.System.Data.DataColumn() {Me.tableITEM.ITEM_IDColumn}, New Global.System.Data.DataColumn() {Me.tableTRANSACTION.ITEM_IDColumn}, false)
+        Me.Relations.Add(Me.relationFK_ITEM_TRANSACTION)
         Me.relationLOGIN_ROLE_FK = New Global.System.Data.DataRelation("LOGIN_ROLE_FK", New Global.System.Data.DataColumn() {Me.tableROLE.ROLE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableLOGIN.ROLE_IDColumn}, false)
         Me.Relations.Add(Me.relationLOGIN_ROLE_FK)
         Me.relationSALE_EMPLOYEE_ID_FK = New Global.System.Data.DataRelation("SALE_EMPLOYEE_ID_FK", New Global.System.Data.DataColumn() {Me.tableEMPLOYEE.EMPLOYEE_IDColumn}, New Global.System.Data.DataColumn() {Me.tableSALE.EMPLOYEE_IDColumn}, false)
@@ -3584,23 +3584,23 @@ Partial Public Class MCC_DEPT
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ITEMRow() As ITEMRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_ITEM_TRANSACTION")),ITEMRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_ITEM_TRANSACTION"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SALERow() As SALERow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_SALE_TRANSACTION")),SALERow)
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_SALE_TRANSACTION"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ITEMRow() As ITEMRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_ITEM_TRANSACTION")),ITEMRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_ITEM_TRANSACTION"))
             End Set
         End Property
         
@@ -6339,12 +6339,142 @@ Namespace MCC_DEPTTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Devart.Data.Oracle.OracleCommand(0) {}
+            Me._commandCollection = New Global.Devart.Data.Oracle.OracleCommand(4) {}
             Me._commandCollection(0) = New Global.Devart.Data.Oracle.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT MEMBER_ID, MEMBER_NAME, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER"& _ 
                 "_PROSHOP, MEMBER_HANDICAP FROM MCC_DEPT.MEMBER"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Devart.Data.Oracle.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "DELETE FROM MCC_DEPT.MEMBER"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MEMBER_NAME = :mName)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Devart.Data.Oracle.OracleParameter = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "mName"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_NAME"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._commandCollection(1).Parameters.Add(param)
+            Me._commandCollection(2) = New Global.Devart.Data.Oracle.OracleCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        MEMBER_ID, MEMBER_NAME, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE,"& _ 
+                " MEMBER_PROSHOP, MEMBER_HANDICAP"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            MCC_DEPT.MEMBER"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3) = New Global.Devart.Data.Oracle.OracleCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "INSERT INTO MCC_DEPT.MEMBER"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (MEMBER_ID, MEMBER_NAME, ME"& _ 
+                "MBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_PROSHOP, MEMBER_HANDICAP)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALU"& _ 
+                "ES        (:MEMBER_ID, :MEMBER_NAME, :MEMBER_ADDRESS, :MEMBER_EMAIL, :MEMBER_PHO"& _ 
+                "NE, :MEMBER_PROSHOP, :MEMBER_HANDICAP)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_ID"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_ID"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_NAME"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_NAME"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_ADDRESS"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_ADDRESS"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_EMAIL"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_EMAIL"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_PHONE"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_PHONE"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_PROSHOP"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_PROSHOP"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_HANDICAP"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_HANDICAP"
+            Me._commandCollection(3).Parameters.Add(param)
+            Me._commandCollection(4) = New Global.Devart.Data.Oracle.OracleCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "UPDATE       MCC_DEPT.MEMBER"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                MEMBER_NAME = :MEMBER_NAME, MEMB"& _ 
+                "ER_ADDRESS = :MEMBER_ADDRESS, MEMBER_EMAIL = :MEMBER_EMAIL, MEMBER_PHONE = :MEMB"& _ 
+                "ER_PHONE, MEMBER_PROSHOP = :MEMBER_PROSHOP, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         MEMBER_HA"& _ 
+                "NDICAP = :MEMBER_HANDICAP"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MEMBER_ID = :fid)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_NAME"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_NAME"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_ADDRESS"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_ADDRESS"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_EMAIL"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_EMAIL"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_PHONE"
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.VarChar
+            param.Size = 1024
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_PHONE"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_PROSHOP"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_PROSHOP"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "MEMBER_HANDICAP"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_HANDICAP"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Devart.Data.Oracle.OracleParameter()
+            param.ParameterName = "fid"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbType = Global.Devart.Data.Oracle.OracleDbType.Number
+            param.IsNullable = true
+            param.SourceColumn = "MEMBER_ID"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._commandCollection(4).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6366,6 +6496,30 @@ Namespace MCC_DEPTTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As MCC_DEPT.MEMBERDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As MCC_DEPT.MEMBERDataTable = New MCC_DEPT.MEMBERDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByMemberName(ByVal dataTable As MCC_DEPT.MEMBERDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy3() As MCC_DEPT.MEMBERDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Dim dataTable As MCC_DEPT.MEMBERDataTable = New MCC_DEPT.MEMBERDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -6613,6 +6767,139 @@ Namespace MCC_DEPTTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal MEMBER_NAME As String, ByVal MEMBER_ADDRESS As String, ByVal MEMBER_EMAIL As String, ByVal MEMBER_PHONE As String, ByVal MEMBER_PROSHOP As Global.System.Nullable(Of Decimal), ByVal MEMBER_HANDICAP As Global.System.Nullable(Of Decimal), ByVal Original_MEMBER_ID As Decimal, ByVal Original_MEMBER_NAME As String, ByVal Original_MEMBER_ADDRESS As String, ByVal Original_MEMBER_EMAIL As String, ByVal Original_MEMBER_PHONE As String, ByVal Original_MEMBER_PROSHOP As Global.System.Nullable(Of Decimal), ByVal Original_MEMBER_HANDICAP As Global.System.Nullable(Of Decimal)) As Integer
             Return Me.Update(Original_MEMBER_ID, MEMBER_NAME, MEMBER_ADDRESS, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_PROSHOP, MEMBER_HANDICAP, Original_MEMBER_ID, Original_MEMBER_NAME, Original_MEMBER_ADDRESS, Original_MEMBER_EMAIL, Original_MEMBER_PHONE, Original_MEMBER_PROSHOP, Original_MEMBER_HANDICAP)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function DeleteMember(ByVal mName As String) As Integer
+            Dim command As Global.Devart.Data.Oracle.OracleCommand = Me.CommandCollection(1)
+            If (mName Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(mName,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertMember(ByVal MEMBER_ID As Decimal, ByVal MEMBER_NAME As String, ByVal MEMBER_ADDRESS As String, ByVal MEMBER_EMAIL As String, ByVal MEMBER_PHONE As String, ByVal MEMBER_PROSHOP As Global.System.Nullable(Of Decimal), ByVal MEMBER_HANDICAP As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.Devart.Data.Oracle.OracleCommand = Me.CommandCollection(3)
+            command.Parameters(0).Value = CType(MEMBER_ID,Decimal)
+            If (MEMBER_NAME Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(MEMBER_NAME,String)
+            End If
+            If (MEMBER_ADDRESS Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(MEMBER_ADDRESS,String)
+            End If
+            If (MEMBER_EMAIL Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(MEMBER_EMAIL,String)
+            End If
+            If (MEMBER_PHONE Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(MEMBER_PHONE,String)
+            End If
+            If (MEMBER_PROSHOP.HasValue = true) Then
+                command.Parameters(5).Value = CType(MEMBER_PROSHOP.Value,Decimal)
+            Else
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (MEMBER_HANDICAP.HasValue = true) Then
+                command.Parameters(6).Value = CType(MEMBER_HANDICAP.Value,Decimal)
+            Else
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateMember(ByVal MEMBER_NAME As String, ByVal MEMBER_ADDRESS As String, ByVal MEMBER_EMAIL As String, ByVal MEMBER_PHONE As String, ByVal MEMBER_PROSHOP As Global.System.Nullable(Of Decimal), ByVal MEMBER_HANDICAP As Global.System.Nullable(Of Decimal), ByVal fid As Decimal) As Integer
+            Dim command As Global.Devart.Data.Oracle.OracleCommand = Me.CommandCollection(4)
+            If (MEMBER_NAME Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(MEMBER_NAME,String)
+            End If
+            If (MEMBER_ADDRESS Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(MEMBER_ADDRESS,String)
+            End If
+            If (MEMBER_EMAIL Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(MEMBER_EMAIL,String)
+            End If
+            If (MEMBER_PHONE Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(MEMBER_PHONE,String)
+            End If
+            If (MEMBER_PROSHOP.HasValue = true) Then
+                command.Parameters(4).Value = CType(MEMBER_PROSHOP.Value,Decimal)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (MEMBER_HANDICAP.HasValue = true) Then
+                command.Parameters(5).Value = CType(MEMBER_HANDICAP.Value,Decimal)
+            Else
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            command.Parameters(6).Value = CType(fid,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

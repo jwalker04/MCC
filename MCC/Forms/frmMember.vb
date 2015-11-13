@@ -1,11 +1,12 @@
-﻿Public Class frmMember
+﻿Imports MCC.MCC_DEPTTableAdapters
+
+Public Class frmMember
     Private MemberID As Integer
     Private MemberCollection As New Dictionary(Of String, String)
 
-    Private Sub Sales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'MCC_DEPTDataSet.MEMBER' table. You can move, or remove it, as needed.
-        Me.MEMBERTableAdapter.Fill(Me.MCC_DEPTDataSet.MEMBER)
-
+    Private Sub frmMember_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'MCC_DEPT.MEMBER' table. You can move, or remove it, as needed.
+        Me.MEMBERTableAdapter.Fill(Me.MCC_DEPT.MEMBER)
 
         'load all items on the combo box
         cboName.Items.Add("Bill Murray")
@@ -34,20 +35,20 @@
 
     Private Sub LINQtoDataSet()
         'call the built-in method to get data
-        MEMBERTableAdapter.Fill(MCC_DEPTDataSet.MEMBER)
+        MEMBERTableAdapter.Fill(MCC_DEPT.MEMBER)
 
-        Dim MemberInfo = From mi In MCC_DEPTDataSet.MEMBER
+        Dim MemberInfo = From mi In MCC_DEPT.MEMBER
                          Where mi.Field(Of String)("Name").Equals(cboName.Text)
                          Select mi
         'execute the query
         For Each mRow In MemberInfo
             TxtBoxID.Text = mRow.MEMBER_ID
-            TxtBoxName.Text = mRow.NAME
-            RichTxtBoxAddress.Text = mRow.ADDRESS
-            TxtBoxEmail.Text = mRow.Email
-            TxtBoxPhoneNum.Text = mRow.Phone
-            TxtMemberCredit.Text = mRow.Pro_Shop_Credit
-            TxtBoxHandicap.Text = mRow.Handicap
+            TxtBoxName.Text = mRow.MEMBER_NAME
+            RichTxtBoxAddress.Text = mRow.MEMBER_ADDRESS
+            TxtBoxEmail.Text = mRow.MEMBER_EMAIL
+            TxtBoxPhoneNum.Text = mRow.MEMBER_PHONE
+            TxtMemberCredit.Text = mRow.MEMBER_PROSHOP
+            TxtBoxHandicap.Text = mRow.MEMBER_HANDICAP
         Next
 
     End Sub
@@ -55,7 +56,7 @@
 
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles BtnSelect.Click
         'declare tableAdapter obj
-        Dim MemberAdapter As New MCC_DEPTDataSetTableAdapters.MEMBERTableAdapter
+        Dim MemberAdapter As New MCC_DEPTTableAdapters.MEMBERTableAdapter
 
         'the LINQ method is selected
         If cboMethod.Text = "LINQ & DataSet Method" Then
@@ -67,7 +68,7 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
-        Dim MemberAdapter As New MCC_DEPTDataSetTableAdapters.MEMBERTableAdapter
+        Dim MemberAdapter As New MCC_DEPTTableAdapters.MEMBERTableAdapter
         Dim strCheck As KeyValuePair(Of String, String) 'single element of a dictionary
         Dim intInsert As Integer
 
@@ -129,7 +130,7 @@
     End Sub
 
     Private Sub BtnSelect_Click_1(sender As Object, e As EventArgs) Handles BtnSelect.Click
-        Dim MemberAdapter As New MCC_DEPTDataSetTableAdapters.MEMBERTableAdapter
+        Dim MemberAdapter As New MCC_DEPTTableAdapters.MEMBERTableAdapter
 
 
         'the LINQ method is selected
@@ -150,7 +151,7 @@
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         'create a tableAdapter object
-        Dim MemberAdapter As New MCC_DEPTDataSetTableAdapters.MEMBERTableAdapter
+        Dim MemberAdapter As New MCC_DEPTTableAdapters.MEMBERTableAdapter
         'create some variables
         Dim intUpdate As Integer
 
@@ -173,18 +174,18 @@
     End Sub
 
     'updateFacultyRow Method
-    Private Function UpdateMemberRow(ByRef mRow As MCC_DEPTDataSet.MEMBERRow) As MCC_DEPTDataSet.MEMBERRow
-        mRow.NAME = TxtBoxName.Text
-        mRow.ADDRESS = RichTxtBoxAddress.Text
-        mRow.Email = TxtBoxEmail.Text
-        mRow.Phone = TxtBoxPhoneNum.Text
-        mRow.Pro_Shop_Credit = TxtMemberCredit.Text
-        mRow.HANDICAP = TxtBoxHandicap.Text
+    Private Function UpdateMemberRow(ByRef mRow As MCC_DEPT.MEMBERRow) As MCC_DEPT.MEMBERRow
+        mRow.MEMBER_NAME = TxtBoxName.Text
+        mRow.MEMBER_ADDRESS = RichTxtBoxAddress.Text
+        mRow.MEMBER_EMAIL = TxtBoxEmail.Text
+        mRow.MEMBER_PHONE = TxtBoxPhoneNum.Text
+        mRow.MEMBER_PROSHOP = TxtMemberCredit.Text
+        mRow.MEMBER_HANDICAP = TxtBoxHandicap.Text
         Return mRow
     End Function
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim MemberAdapter As New MCC_DEPTDataSetTableAdapters.MEMBERTableAdapter
+        Dim MemberAdapter As New MCC_DEPTTableAdapters.MEMBERTableAdapter
         Dim dlgResult As DialogResult
         Dim intDelete As Integer
 

@@ -22,6 +22,7 @@ Partial Class frmMember
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.RichTxtBoxAddress = New System.Windows.Forms.RichTextBox()
@@ -46,6 +47,11 @@ Partial Class frmMember
         Me.lblMemberAdress = New System.Windows.Forms.Label()
         Me.TxtBoxID = New System.Windows.Forms.TextBox()
         Me.LblMemberName = New System.Windows.Forms.Label()
+        Me.MCC_DEPT = New MCC.MCC_DEPT()
+        Me.MEMBERBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MEMBERTableAdapter = New MCC.MCC_DEPTTableAdapters.MEMBERTableAdapter()
+        CType(Me.MCC_DEPT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnDelete
@@ -126,6 +132,7 @@ Partial Class frmMember
         '
         'cboName
         '
+        Me.cboName.DataSource = Me.MEMBERBindingSource
         Me.cboName.FormattingEnabled = True
         Me.cboName.Location = New System.Drawing.Point(117, 38)
         Me.cboName.Margin = New System.Windows.Forms.Padding(2)
@@ -273,6 +280,20 @@ Partial Class frmMember
         Me.LblMemberName.TabIndex = 25
         Me.LblMemberName.Text = "Member Name:"
         '
+        'MCC_DEPT
+        '
+        Me.MCC_DEPT.DataSetName = "MCC_DEPT"
+        Me.MCC_DEPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MEMBERBindingSource
+        '
+        Me.MEMBERBindingSource.DataMember = "MEMBER"
+        Me.MEMBERBindingSource.DataSource = Me.MCC_DEPT
+        '
+        'MEMBERTableAdapter
+        '
+        Me.MEMBERTableAdapter.ClearBeforeFill = True
+        '
         'frmMember
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -304,6 +325,8 @@ Partial Class frmMember
         Me.Controls.Add(Me.LblMemberName)
         Me.Name = "frmMember"
         Me.Text = "frmMember"
+        CType(Me.MCC_DEPT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MEMBERBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -333,4 +356,7 @@ Partial Class frmMember
     Friend WithEvents lblMemberAdress As Label
     Friend WithEvents TxtBoxID As TextBox
     Friend WithEvents LblMemberName As Label
+    Friend WithEvents MCC_DEPT As MCC_DEPT
+    Friend WithEvents MEMBERBindingSource As BindingSource
+    Friend WithEvents MEMBERTableAdapter As MCC_DEPTTableAdapters.MEMBERTableAdapter
 End Class

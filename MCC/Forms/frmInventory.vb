@@ -11,8 +11,6 @@ Public Class frmInventory
         'TODO: This line of code loads data into the 'MCC_DEPT.ITEM' table. You can move, or remove it, as needed.
         Me.ITEMTableAdapter.Fill(Me.MCC_DEPT.ITEM)
 
-        ITEMTableAdapter.Fill(MCC_DEPT.ITEM)
-
         'Populate combo box
         FillComboBox()
     End Sub
